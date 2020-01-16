@@ -4,24 +4,10 @@ class Solution:
         tempB = b[1:]
         print("temp A ", tempA)
         print("temp B ", tempB)
-        negativeA = negativeB = False
-        if "-" in tempA:
-            negativeA = True
-        if "-" in tempB:
-            negativeB = True
+
+        firstReal = a.split("+")[0]
         
-        print("NEGATIVE A ", negativeA)
-        print("NEGATIVE B", negativeB)
-        
-        if not negativeA:
-            firstReal = a.split("+")[0]
-        else:
-            firstReal = a[0] + tempA.split("-")[0]
-        
-        if not negativeB:
-            secondReal = b.split("+")[0]
-        else:
-            secondReal = b[0] + tempB.split("-")[0]
+        secondReal = b.split("+")[0]
         
         # print("first real is ", firstReal)
         # print("second real is ", secondReal)
@@ -34,12 +20,8 @@ class Solution:
         # print("first complex is ", firstComplex)
         firstComplex = eval(firstComplex)
 
-       
-        if not negativeB:
-             secondComplex = b.split("+")[1]
-        else:
-            secondComplex = "-" + tempB.split("-")[1]
-
+        secondComplex = b.split("+")[1]
+        
         secondComplex = secondComplex[:len(secondComplex) - 1]
         # print("second complex is ", secondComplex)
         secondComplex = eval(secondComplex)
@@ -52,21 +34,24 @@ class Solution:
 
         resultFinal = ""
         if resultComplex < 0:
-            resultFinal = str(resultReal) + "-" + str(abs(resultComplex)) + "i"
+            resultFinal = str(resultReal) + "+" + str(resultComplex) + "i"
             print("a")
-        elif resultComplex == 0:
-            resultFinal = str(resultReal)
-            print("c")
+        # elif resultComplex == 0:
+        #     resultFinal = str(resultReal)
+        #     print("c")
         else:
             resultFinal = str(resultReal) + "+" + str(resultComplex) + "i"
             print("b")
         print(resultFinal)
+        return resultFinal
 
 
 
 
 
-
-# s = Solution()
-# # s.complexNumberMultiply("1+1i", "2+2i")
+s = Solution()
+# s.complexNumberMultiply("1+1i", "2+2i")
 # s.complexNumberMultiply("4+3i", "-3-4i")
+# s.complexNumberMultiply("4+3i", "-3+-4i")
+# s.complexNumberMultiply("1+-1i", "1+-1i")
+s.complexNumberMultiply("1+0i", "1+0i")
