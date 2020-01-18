@@ -12,13 +12,8 @@ class Solution:
     
     def maxDepthHelper(self, root: 'Node') -> int:
         count = 0
-        # if root == "null":
-        #     print("hereeee OK")
-        #     return 0
         if not(root):
-            # print("HERRRE WHY THO")
             return 0
-        
         depth = 0
         # print("root is ", root.val)
         if root.children is None:
@@ -26,9 +21,6 @@ class Solution:
         
         for child in root.children:
             depth = max(depth, self.maxDepthHelper(child))
-            # temp = self.maxDepthHelper(child)
-            # if temp > step:
-            #     step = temp
             
         return depth + 1
         
