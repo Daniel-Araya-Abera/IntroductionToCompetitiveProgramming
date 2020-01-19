@@ -8,6 +8,9 @@ class TreeNode:
 class Solution:
     def hasPathSum(self, root: TreeNode, sum: int) -> bool:
         count = 1
+        if not root: ## root is empty
+            print("here")
+            return False
         return self.hasPathSumHelper(root, sum, 0)
         
     def hasPathSumHelper(self, root: TreeNode, sum: int, sumUpToNow: int) -> bool:
