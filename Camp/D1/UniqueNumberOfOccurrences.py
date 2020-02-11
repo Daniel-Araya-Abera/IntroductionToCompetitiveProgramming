@@ -1,3 +1,6 @@
+#1st question
+# https://leetcode.com/contest/weekly-contest-156/problems/unique-number-of-occurrences/
+
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
         frequency = {} # this holds the frequency of each characters in the given list
