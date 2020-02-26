@@ -24,22 +24,12 @@ class Solution:
 
                     if (current[0] + 1) not in leftMostValues:
                         leftMostValues[current[0] + 1] = current[1].left.val
-                    else:
-                        pass
-                        # print("index ", current[0] + 1, " is already in dictionary, value is ", leftMostValues[current[0] + 1])
 
                 if rightSide:
                     queue.append(    (current[0] + 1, current[1].right )   ) 
                     if (current[0] + 1) not in leftMostValues:
                         leftMostValues[current[0] + 1] = current[1].right.val
-                    else:
-                        pass
-                        # print("index ", current[0] + 1, " is already in dictionary, value is ", leftMostValues[current[0] + 1])
-
-            
-        # print("left most value are : ", leftMostValues)
         maxx = max(leftMostValues.keys())
-        # print("maxx is ", maxx)
         return leftMostValues[maxx]
     
     
