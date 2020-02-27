@@ -1,4 +1,4 @@
-#1st question
+#Camp D1 1st question
 # https://leetcode.com/contest/weekly-contest-156/problems/unique-number-of-occurrences/
 
 class Solution:
@@ -9,7 +9,6 @@ class Solution:
                 frequency[each] = 1
             else:
                 frequency[each] += 1
-        # print("frequency is ", frequency)
         
         listOfAllFrequencies = []
         for each in frequency:

@@ -15,13 +15,11 @@ class Solution:
             
             limit = limit + diff
 
-            while limit > maxCost:        # first_diff = abs(   ( ord(s[start]) - ord('a') )   -    ( ord(t[start]) - ord('a') )   )
+            while limit > maxCost:      
                 first_diff = abs( ord(s[start]) - ord(t[start])  )
                 limit = limit - first_diff
                 start += 1
                 
             maxx = max(maxx, end - start)
-            # if end - start > maxx:
-            #     maxx = end - start
-        
+
         return maxx
