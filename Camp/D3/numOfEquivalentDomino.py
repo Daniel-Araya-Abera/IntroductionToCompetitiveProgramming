@@ -10,20 +10,14 @@ class Solution:
     def numEquivDominoPairs(self, dominoes: List[List[int]]) -> int:
         stack = []
         frequency = {}
+        count = 0
+
         for i in range(len(dominoes)):
-#             stack.append(dominoes[i])
-#             firstNum = dominoes[i][0]
-#             secondNum = dominoes[i][1]
             if dominoes[i][0] > dominoes[i][1]:
                 first = dominoes[i][0]
                 second = dominoes[i][1]
                 dominoes[i][0] = second
-                dominoes[i][1] = first
-        
-        # print("dominoes : ", dominoes)
-        
-        
-        count = 0
+                dominoes[i][1] = first        
         
         for each in dominoes:
             eachTuple = tuple(each)
@@ -31,13 +25,9 @@ class Solution:
                 frequency[eachTuple] = 1
             else:
                 frequency[eachTuple] += 1
-                
-        
-        # print("frequency is ", frequency)
         
         for each in frequency:
             countSingle = frequency[each]
             count += int( ( countSingle * (countSingle - 1) ) / 2 )
         
-        # print("count is ", count)
         return count
