@@ -10,8 +10,6 @@ class Solution:
         oldColor = image[sr][sc]
         ##BFS
         while queue: 
-            print("queue is ", queue)
-
             lastElement = queue.popleft()
             currentX = lastElement[0]
             currentY = lastElement[1]
@@ -22,5 +20,5 @@ class Solution:
                 y = currentY + each[1]
                 if 0 <= x< len(image) and 0 <= y< len(image[0]) :
                     if image[x][y] == oldColor:
-  
-        return image                
+                        queue.append([x,y])
+        return image

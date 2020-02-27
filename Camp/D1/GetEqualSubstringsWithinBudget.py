@@ -3,7 +3,7 @@ class Solution:
         viableEnd = min(len(s), len(t))
         start = 0
         end = 1
-        count = i = 0
+        count = 0
         maxx = 0
         limit = 0
         for i in range(viableEnd):

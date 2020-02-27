@@ -9,12 +9,10 @@ class Solution:
                 givenValue = stack.pop(j)
                 calculatedResult = givenValue | A[i]
                 if calculatedResult not in discoveredSumms:
-                    # newSet = set([i])
-                    # discoveredSumms[calculatedResult] = newSet
                     discoveredSumms[calculatedResult] = set([i])
                     stack.append(calculatedResult)
                 else:
-                    if i not in discoveredSumms[calculatedResult]:   ## not in set
+                    if i not in discoveredSumms[calculatedResult]: 
                         discoveredSumms[calculatedResult].add(i)
                         stack.append(calculatedResult)
         return len(discoveredSumms)
