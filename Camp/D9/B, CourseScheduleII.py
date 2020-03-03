@@ -25,28 +25,17 @@ class Solution:
             if not frequency_list[i]:
                 queue.append(i)
                 
-        # print("queue is ", queue)
-        # print("visited list is ", visited_list)
-        # print("adjacency_list : ", adjacency_list)
         result = []
         if len(queue) == 0:
             return []
         while queue:
-            # print("queue is ", queue)
             curr = queue.popleft()
             for eachIndex in adjacency_list[curr]:
                 frequency_list[eachIndex] -= 1
                 if frequency_list[eachIndex] == 0 :
                     queue.append(eachIndex)
-                # elif frequency_list[eachIndex] <= 0 :
-                #     print("NN")
             result.append(curr)
-        
-        print("result is ", result)
-        # if not len(result):
-        #     return False
         if len(result) != numCourses:
-            print("coz result is ", result, " and numCourses is ", numCourses)
             return []
         return result
                 
