@@ -6,16 +6,11 @@ class Solution:
         for i in range(1, len(frequency)):
             frequency[i] = frequency[i - 1] - shifts[i - 1]
         
-        # print("frequency is ", frequency)
-        result = "" ## better use join function
+        result = "" ## better use join function with array of strings maybe
         for i in range(len(S)):
             result += self.shiftSingleLetter( S[i], frequency[i] )
-        # print("result is ", result)
         return result
         
-        
-        
-    
     def shiftSingleLetter(self, singleLetter: str, shift: int) -> str:
         original = ord(singleLetter) - ord('a')
         final = (original + shift) % 26 + ord('a')
