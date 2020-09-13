@@ -1,4 +1,4 @@
-# Sqrt(x)
+# Square Root X - Sqrt(x)
 # https://leetcode.com/problems/sqrtx/
 # Difficulty: Medium
 
