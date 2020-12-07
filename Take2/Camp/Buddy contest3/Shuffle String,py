@@ -1,0 +1,9 @@
+class Solution:
+    def restoreString(self, s: str, indices: List[int]) -> str:
+        ordered = [None] * len(s)
+        
+        for i, char in enumerate(s):
+            ordered[indices[i]] = char
+        
+        return "".join(ordered)
+    
